@@ -12,8 +12,8 @@ public class GerarFigurinhas {
     
     public void cria(InputStream inputStream, String nomeArquivo) throws Exception{
         //Leitura da Imagem 
-        InputStream InputStream = new URL("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.jpg").openStream();
-        BufferedImage imagemOriginal = ImageIO.read(InputStream);
+       // InputStream InputStream = new URL("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.jpg").openStream();
+        BufferedImage imagemOriginal = ImageIO.read(inputStream);
 
         //Criar nova imagem
 
