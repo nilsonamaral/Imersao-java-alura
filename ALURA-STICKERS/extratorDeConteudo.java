@@ -7,15 +7,18 @@ public class extratorDeConteudo {
 
         //extrai só os dados que interessam (título, classificação, imagem...)
         var parser = new jsonParser();
-        List<Map<String, String>> listaDeAtributos = parser.parse.(json);
+        List<Map<String, String>> listaDeAtributos = parser.parse(json);
 
-        List<Conteudo> conteudos = new ArrayList<>();
+        List<conteudo> conteudos = new ArrayList<>();
 
         //popular a lista de conteúdos
         for (Map<String, String> atributos : listaDeAtributos) {
             String titulo = atributos.get("title");
-            String urlImagem = atributos.get("url");
+            String urlImagem = atributos.get("image")
+                  .replaceAll(regex: "(@+)(.*).jpg$", replacement: "$1.jpg");
              var conteudo = new conteudo(titulo, urlImagem);
+
+            conteudos.add(conteudo);
         }
 
         return conteudos;
